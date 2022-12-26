@@ -1,0 +1,26 @@
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  my_formatter:
+    format: '%(name)s ***** %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  filehandler:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: my_formatter
+    filename: byme_api.log
+    mode: 'w'
+loggers:
+  simpleExample:
+    level: DEBUG
+    handlers: [ console,filehandler ]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [ console ]

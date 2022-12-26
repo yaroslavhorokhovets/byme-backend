@@ -1,0 +1,3844 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "ApiByMe",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/api/v1.0/ping": {
+            "get": {
+                "summary": "Check Services",
+                "operationId": "check_services_api_v1_0_ping_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/login": {
+            "post": {
+                "summary": "Login",
+                "operationId": "login_api_v1_0_login_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyLogin"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/register": {
+            "post": {
+                "summary": "Register",
+                "operationId": "register_api_v1_0_register_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyRegister"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/account": {
+            "get": {
+                "summary": "Detail Account",
+                "operationId": "detail_account_api_v1_0_account_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/account/{account_id}": {
+            "put": {
+                "summary": "Update Account",
+                "operationId": "update_account_api_v1_0_account__account_id__put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Account Id",
+                            "type": "string"
+                        },
+                        "name": "account_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/reset-password": {
+            "post": {
+                "summary": "Reset Password",
+                "operationId": "reset_password_api_v1_0_reset_password_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResetPassword"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/random-choice-image-upload": {
+            "get": {
+                "summary": "Random Choice Image Upload",
+                "operationId": "random_choice_image_upload_api_v1_0_random_choice_image_upload_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/account/actions/filter": {
+            "post": {
+                "summary": "Account Action Filter",
+                "operationId": "account_action_filter_api_v1_0_account_actions_filter_post",
+                "parameters": [
+                    {
+                        "description": "Page cần lấy dữ liệu",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer",
+                            "description": "Page cần lấy dữ liệu"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Số lượng ảnh cần lấy trên 1 trang",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer",
+                            "description": "Số lượng ảnh cần lấy trên 1 trang"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ActionFilterAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/account/actions/delete": {
+            "post": {
+                "summary": "Delete Accounts",
+                "operationId": "delete_accounts_api_v1_0_account_actions_delete_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyDeleteAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/account/actions/download-csv": {
+            "post": {
+                "summary": "Account Action Download Csv",
+                "operationId": "account_action_download_csv_api_v1_0_account_actions_download_csv_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ActionDownloadCsvAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/category-default": {
+            "get": {
+                "summary": "List Category Default",
+                "operationId": "list_category_default_api_v1_0_category_default_get",
+                "parameters": [
+                    {
+                        "description": "Danh sách field cần lấy dữ liệu",
+                        "required": false,
+                        "schema": {
+                            "title": "Field Keys",
+                            "type": "string",
+                            "description": "Danh sách field cần lấy dữ liệu",
+                            "default": ""
+                        },
+                        "name": "field_keys",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Insert Category Default",
+                "operationId": "insert_category_default_api_v1_0_category_default_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/category": {
+            "post": {
+                "summary": "Add Category",
+                "operationId": "add_category_api_v1_0_category_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddCategory"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/actions/filter/category": {
+            "post": {
+                "summary": "Filter Category",
+                "operationId": "filter_category_api_v1_0_actions_filter_category_post",
+                "parameters": [
+                    {
+                        "description": "Danh sách field cần lấy dữ liệu",
+                        "required": false,
+                        "schema": {
+                            "title": "Field Keys",
+                            "type": "string",
+                            "description": "Danh sách field cần lấy dữ liệu",
+                            "default": ""
+                        },
+                        "name": "field_keys",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FilterCategory"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/category/{category_id}": {
+            "put": {
+                "summary": "Update Category",
+                "operationId": "update_category_api_v1_0_category__category_id__put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Category Id"
+                        },
+                        "name": "category_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCategory"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Category",
+                "operationId": "delete_category_api_v1_0_category__category_id__delete",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Category Id"
+                        },
+                        "name": "category_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/seen/tutorial": {
+            "put": {
+                "summary": "Seen Tutorial Category",
+                "operationId": "seen_tutorial_category_api_v1_0_seen_tutorial_put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Category Id"
+                        },
+                        "name": "category_id",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/{root_category_id}/sub-child-category": {
+            "get": {
+                "summary": "Lst Sub Child Category",
+                "operationId": "lst_sub_child_category_api_v1_0__root_category_id__sub_child_category_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Root Category Id"
+                        },
+                        "name": "root_category_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/{root_category_id}/child/actions/filter/image": {
+            "post": {
+                "summary": "Child Filter Image",
+                "operationId": "child_filter_image_api_v1_0__root_category_id__child_actions_filter_image_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Root Category Id"
+                        },
+                        "name": "root_category_id",
+                        "in": "path"
+                    },
+                    {
+                        "description": "Page cần lấy dữ liệu",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer",
+                            "description": "Page cần lấy dữ liệu"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Số lượng ảnh cần lấy trên 1 trang",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer",
+                            "description": "Số lượng ảnh cần lấy trên 1 trang"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChildFilterImage"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/upload/image": {
+            "post": {
+                "summary": "Upload Image",
+                "operationId": "upload_image_api_v1_0_upload_image_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_upload_image_api_v1_0_upload_image_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/override/image": {
+            "post": {
+                "summary": "Override Image",
+                "operationId": "override_image_api_v1_0_override_image_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_override_image_api_v1_0_override_image_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/upload/file": {
+            "post": {
+                "summary": "Upload File",
+                "operationId": "upload_file_api_v1_0_upload_file_post",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_upload_file_api_v1_0_upload_file_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/image/request/edit": {
+            "post": {
+                "summary": "Image Request Edit",
+                "operationId": "image_request_edit_api_v1_0_image_request_edit_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ImageRequestEditBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/image/actions/delete": {
+            "post": {
+                "summary": "Image Action Delete",
+                "operationId": "image_action_delete_api_v1_0_image_actions_delete_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeleteFileBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/image/actions/filter": {
+            "post": {
+                "summary": "Image Action Filter",
+                "operationId": "image_action_filter_api_v1_0_image_actions_filter_post",
+                "parameters": [
+                    {
+                        "description": "Page cần lấy dữ liệu",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer",
+                            "description": "Page cần lấy dữ liệu"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Số lượng ảnh cần lấy trên 1 trang",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer",
+                            "description": "Số lượng ảnh cần lấy trên 1 trang"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FilterFileBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/download/image": {
+            "post": {
+                "summary": "Download Image",
+                "operationId": "download_image_api_v1_0_download_image_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DownloadImageBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/image/request/history": {
+            "post": {
+                "summary": "History Request Image",
+                "operationId": "history_request_image_api_v1_0_image_request_history_post",
+                "parameters": [
+                    {
+                        "description": "Tab cần lấy dữ liệu. Ví dụ: before_upload, pending, edited",
+                        "required": false,
+                        "schema": {
+                            "title": "Tab",
+                            "type": "string",
+                            "description": "Tab cần lấy dữ liệu. Ví dụ: before_upload, pending, edited"
+                        },
+                        "name": "tab",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Page cần lấy dữ liệu",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer",
+                            "description": "Page cần lấy dữ liệu"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Số lượng ảnh cần lấy trên 1 trang",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer",
+                            "description": "Số lượng ảnh cần lấy trên 1 trang"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FilterHistoryImage"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/file/tutorial": {
+            "get": {
+                "summary": "Lst File Tutorial",
+                "operationId": "lst_file_tutorial_api_v1_0_file_tutorial_get",
+                "parameters": [
+                    {
+                        "description": "Định dạng tutorial",
+                        "required": false,
+                        "schema": {
+                            "title": "Format Tutorial",
+                            "type": "string",
+                            "description": "Định dạng tutorial"
+                        },
+                        "name": "format_tutorial",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Page cần lấy dữ liệu",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer",
+                            "description": "Page cần lấy dữ liệu"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Số lượng ảnh cần lấy trên 1 trang",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer",
+                            "description": "Số lượng ảnh cần lấy trên 1 trang"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Upload File Tutorial",
+                "operationId": "upload_file_tutorial_api_v1_0_file_tutorial_post",
+                "parameters": [
+                    {
+                        "description": "Định dạng file hướng dẫn",
+                        "required": true,
+                        "schema": {
+                            "title": "Format Tutorial",
+                            "type": "string",
+                            "description": "Định dạng file hướng dẫn"
+                        },
+                        "name": "format_tutorial",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_upload_file_tutorial_api_v1_0_file_tutorial_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/file/tutorial/action/delete": {
+            "post": {
+                "summary": "Delete File Tutorial",
+                "operationId": "delete_file_tutorial_api_v1_0_file_tutorial_action_delete_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DeleteFileTutorialBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/email/send-mail-reset-password": {
+            "post": {
+                "summary": "Send Email Reset Password",
+                "operationId": "send_email_reset_password_api_v1_0_email_send_mail_reset_password_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SendEmailResetPassword"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/photography-style-default": {
+            "post": {
+                "summary": "Insert Default",
+                "operationId": "insert_default_api_v1_0_photography_style_default_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/type-category-default": {
+            "post": {
+                "summary": "Insert Default",
+                "operationId": "insert_default_api_v1_0_type_category_default_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/type-category": {
+            "get": {
+                "summary": "Get Type Category By Root Category Id",
+                "operationId": "get_type_category_by_root_category_id_api_v1_0_type_category_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Root Category Id"
+                        },
+                        "name": "root_category_id",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/questions": {
+            "post": {
+                "summary": "Add Question",
+                "operationId": "add_question_api_v1_0_questions_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddQuestionBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/report": {
+            "get": {
+                "summary": "Report",
+                "operationId": "report_api_v1_0_report_get",
+                "parameters": [
+                    {
+                        "description": "Thời gian bắt đầu lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-27",
+                        "required": true,
+                        "schema": {
+                            "title": "Start Time",
+                            "type": "string",
+                            "description": "Thời gian bắt đầu lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-27"
+                        },
+                        "name": "start_time",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Thời gian kết thúc lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-29",
+                        "required": true,
+                        "schema": {
+                            "title": "End Time",
+                            "type": "string",
+                            "description": "Thời gian kết thúc lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-29"
+                        },
+                        "name": "end_time",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/report-admin": {
+            "get": {
+                "summary": "Report Admin",
+                "operationId": "report_admin_api_v1_0_report_admin_get",
+                "parameters": [
+                    {
+                        "description": "Thời gian bắt đầu lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-27",
+                        "required": true,
+                        "schema": {
+                            "title": "Start Time",
+                            "type": "string",
+                            "description": "Thời gian bắt đầu lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-27"
+                        },
+                        "name": "start_time",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Thời gian kết thúc lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-29",
+                        "required": true,
+                        "schema": {
+                            "title": "End Time",
+                            "type": "string",
+                            "description": "Thời gian kết thúc lấy báo cáo. Định dạnh %Y-%m-%d. Ví dụ: 2022-03-29"
+                        },
+                        "name": "end_time",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/request-meeting": {
+            "post": {
+                "summary": "Add Request Meeting",
+                "operationId": "add_request_meeting_api_v1_0_request_meeting_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddRequestMeetingModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/activity/history": {
+            "get": {
+                "summary": "Lst Activity History",
+                "operationId": "lst_activity_history_api_v1_0_activity_history_get",
+                "parameters": [
+                    {
+                        "description": "Năm",
+                        "required": true,
+                        "schema": {
+                            "title": "Year",
+                            "type": "string",
+                            "description": "Năm"
+                        },
+                        "name": "year",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Tháng",
+                        "required": true,
+                        "schema": {
+                            "title": "Month",
+                            "type": "string",
+                            "description": "Tháng"
+                        },
+                        "name": "month",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Page",
+                        "required": true,
+                        "schema": {
+                            "title": "Page",
+                            "type": "string",
+                            "description": "Page"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Per Page",
+                        "required": true,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "string",
+                            "description": "Per Page"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add Activity History",
+                "operationId": "add_activity_history_api_v1_0_activity_history_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyAddActivityHistory"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/upload/invoices": {
+            "post": {
+                "summary": "Upload Invoice",
+                "operationId": "upload_invoice_api_v1_0_upload_invoices_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_upload_invoice_api_v1_0_upload_invoices_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/invoices": {
+            "get": {
+                "summary": "Lst Invoices",
+                "operationId": "lst_invoices_api_v1_0_invoices_get",
+                "parameters": [
+                    {
+                        "description": "Thời gian đối với account user",
+                        "required": false,
+                        "schema": {
+                            "title": "Action Time",
+                            "type": "string",
+                            "description": "Thời gian đối với account user"
+                        },
+                        "name": "action_time",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/invoice/{invoice_id}": {
+            "put": {
+                "summary": "Invoice Detail",
+                "operationId": "invoice_detail_api_v1_0_invoice__invoice_id__put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Invoice Id"
+                        },
+                        "name": "invoice_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateInvoice"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/download/invoices": {
+            "post": {
+                "summary": "Download Invoices",
+                "operationId": "download_invoices_api_v1_0_download_invoices_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DownloadInvoice"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/download/invoices/user": {
+            "post": {
+                "summary": "Download Invoices User",
+                "operationId": "download_invoices_user_api_v1_0_download_invoices_user_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/terms_of_use": {
+            "get": {
+                "summary": "Get Terms",
+                "operationId": "get_terms_api_v1_0_terms_of_use_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Upsert Terms",
+                "operationId": "upsert_terms_api_v1_0_terms_of_use_put",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyUpsert"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/privacy_policy": {
+            "get": {
+                "summary": "Get Privacy Policy",
+                "operationId": "get_privacy_policy_api_v1_0_privacy_policy_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Upsert Privacy Policy",
+                "operationId": "upsert_privacy_policy_api_v1_0_privacy_policy_put",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyUpsert"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/push/notification/email": {
+            "get": {
+                "summary": "Lst Notification Email",
+                "operationId": "lst_notification_email_api_v1_0_push_notification_email_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add Notification Email",
+                "operationId": "add_notification_email_api_v1_0_push_notification_email_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyAddNotificationEmail"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/push/notification/email/{push_id}": {
+            "put": {
+                "summary": "Update Notification Email",
+                "operationId": "update_notification_email_api_v1_0_push_notification_email__push_id__put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Push Id"
+                        },
+                        "name": "push_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyUpdateNotificationEmail"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Notification Email",
+                "operationId": "delete_notification_email_api_v1_0_push_notification_email__push_id__delete",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Push Id"
+                        },
+                        "name": "push_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/push/notification/web": {
+            "get": {
+                "summary": "Lst Notification Web",
+                "operationId": "lst_notification_web_api_v1_0_push_notification_web_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add Notification Web",
+                "operationId": "add_notification_web_api_v1_0_push_notification_web_post",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyAddNotificationWeb"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/push/notification/web/{push_id}": {
+            "put": {
+                "summary": "Update Notification Web",
+                "operationId": "update_notification_web_api_v1_0_push_notification_web__push_id__put",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Push Id"
+                        },
+                        "name": "push_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BodyUpdateNotificationWeb"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete Notification Web",
+                "operationId": "delete_notification_web_api_v1_0_push_notification_web__push_id__delete",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Push Id"
+                        },
+                        "name": "push_id",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1.0/notification/account": {
+            "get": {
+                "summary": "Lst Notification Account",
+                "operationId": "lst_notification_account_api_v1_0_notification_account_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Page",
+                            "type": "integer"
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Per Page",
+                            "type": "integer"
+                        },
+                        "name": "per_page",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Access-Token",
+                            "type": "string"
+                        },
+                        "name": "access-token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ActionDownloadCsvAccount": {
+                "title": "ActionDownloadCsvAccount",
+                "type": "object",
+                "properties": {
+                    "search": {
+                        "title": "Search",
+                        "type": "string",
+                        "description": "Từ khoá cần tìm kếm"
+                    },
+                    "code_user": {
+                        "title": "Code User",
+                        "type": "string",
+                        "description": "Mã tài khoản cần tìm kiếm"
+                    },
+                    "start_time": {
+                        "title": "Start Time",
+                        "type": "string",
+                        "description": "Thời gian bắt đầu tìm kiếm. Ví dụ: 2022-04-22"
+                    },
+                    "end_time": {
+                        "title": "End Time",
+                        "type": "string",
+                        "description": "Thời gian kết túc tìm kiếm. Ví dụ: 2022-04-22"
+                    }
+                }
+            },
+            "ActionFilterAccount": {
+                "title": "ActionFilterAccount",
+                "type": "object",
+                "properties": {
+                    "search": {
+                        "title": "Search",
+                        "type": "string",
+                        "description": "Từ khoá cần tìm kếm"
+                    },
+                    "code_user": {
+                        "title": "Code User",
+                        "type": "string",
+                        "description": "Mã tài khoản cần tìm kiếm"
+                    }
+                }
+            },
+            "AddCategory": {
+                "title": "AddCategory",
+                "required": [
+                    "name",
+                    "number_next_step",
+                    "root_category_id",
+                    "coordinates",
+                    "accuracy"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string",
+                        "description": "Tên của category"
+                    },
+                    "number_next_step": {
+                        "title": "Number Next Step",
+                        "type": "integer",
+                        "description": "Bước trước đó"
+                    },
+                    "root_category_id": {
+                        "title": "Root Category Id",
+                        "type": "string",
+                        "description": "Định danh của thằng gốc"
+                    },
+                    "link_video_tutorial": {
+                        "title": "Link Video Tutorial",
+                        "type": "string",
+                        "description": "Link video hướng dẫn"
+                    },
+                    "parent_id": {
+                        "title": "Parent Id",
+                        "type": "string",
+                        "description": "Id của thằng cha"
+                    },
+                    "type_category_id": {
+                        "title": "Type Category Id",
+                        "type": "string",
+                        "description": "Loại danh mục được chọn"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Mô tả"
+                    },
+                    "coordinates": {
+                        "title": "Coordinates",
+                        "type": "array",
+                        "items": {},
+                        "description": "Toạ độ khi tạo phòng"
+                    },
+                    "accuracy": {
+                        "title": "Accuracy",
+                        "type": "number",
+                        "description": "Độ chính xác của toạ độ"
+                    }
+                }
+            },
+            "AddQuestionBody": {
+                "title": "AddQuestionBody",
+                "required": [
+                    "fullname",
+                    "email",
+                    "question"
+                ],
+                "type": "object",
+                "properties": {
+                    "fullname": {
+                        "title": "Fullname",
+                        "type": "string",
+                        "description": "Họ và tên"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "description": "Địa chỉ email",
+                        "format": "email"
+                    },
+                    "question": {
+                        "title": "Question",
+                        "type": "string",
+                        "description": "Câu hỏi"
+                    }
+                }
+            },
+            "AddRequestMeetingModel": {
+                "title": "AddRequestMeetingModel",
+                "required": [
+                    "facility_name",
+                    "person_charge",
+                    "phone_number",
+                    "email",
+                    "desired_schedule"
+                ],
+                "type": "object",
+                "properties": {
+                    "facility_name": {
+                        "title": "Facility Name",
+                        "type": "string",
+                        "description": "Tên cơ sở"
+                    },
+                    "person_charge": {
+                        "title": "Person Charge",
+                        "type": "string",
+                        "description": "Người phụ trách"
+                    },
+                    "phone_number": {
+                        "title": "Phone Number",
+                        "type": "string",
+                        "description": "Số điện thoại"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "description": "Địa chỉ email",
+                        "format": "email"
+                    },
+                    "desired_schedule": {
+                        "title": "Desired Schedule",
+                        "type": "string",
+                        "description": "Lịch trình mong muốn"
+                    }
+                }
+            },
+            "BodyAddActivityHistory": {
+                "title": "BodyAddActivityHistory",
+                "required": [
+                    "device",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "title": "Device",
+                        "type": "string",
+                        "description": "Thiết bị. Ví dụ: Mobile, PC"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "BodyAddNotificationEmail": {
+                "title": "BodyAddNotificationEmail",
+                "required": [
+                    "action_time",
+                    "title",
+                    "url",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "action_time": {
+                        "title": "Action Time",
+                        "type": "string",
+                        "description": "Thời gian thực hiện gửi thông báo. Ví dụ: 2022-05-31T00:01Z"
+                    },
+                    "title": {
+                        "title": "Title",
+                        "type": "string",
+                        "description": "Tiêu đề"
+                    },
+                    "url": {
+                        "title": "Url",
+                        "type": "string",
+                        "description": "URL"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "BodyAddNotificationWeb": {
+                "title": "BodyAddNotificationWeb",
+                "required": [
+                    "action_time",
+                    "title",
+                    "url",
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "action_time": {
+                        "title": "Action Time",
+                        "type": "string",
+                        "description": "Thời gian thực hiện gửi thông báo. Ví dụ: 2022-05-31T00:01Z"
+                    },
+                    "title": {
+                        "title": "Title",
+                        "type": "string",
+                        "description": "Tiêu đề"
+                    },
+                    "url": {
+                        "title": "Url",
+                        "type": "string",
+                        "description": "URL"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "BodyDeleteAccount": {
+                "title": "BodyDeleteAccount",
+                "required": [
+                    "account_ids"
+                ],
+                "type": "object",
+                "properties": {
+                    "account_ids": {
+                        "title": "Account Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách account id cần xoá"
+                    }
+                }
+            },
+            "BodyLogin": {
+                "title": "BodyLogin",
+                "required": [
+                    "username",
+                    "password"
+                ],
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "title": "Username",
+                        "type": "string"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "type": "string"
+                    }
+                }
+            },
+            "BodyRegister": {
+                "title": "BodyRegister",
+                "required": [
+                    "sales_staff",
+                    "password",
+                    "representative_name",
+                    "email",
+                    "postal_code",
+                    "address",
+                    "phone_number",
+                    "fax_number",
+                    "ID_use"
+                ],
+                "type": "object",
+                "properties": {
+                    "facility_name": {
+                        "title": "Facility Name",
+                        "type": "string",
+                        "description": "Tên cơ sở",
+                        "default": ""
+                    },
+                    "facility_code": {
+                        "title": "Facility Code",
+                        "type": "string",
+                        "description": "Mã cơ sở",
+                        "default": ""
+                    },
+                    "sales_staff": {
+                        "title": "Sales Staff",
+                        "type": "string",
+                        "description": "Nhân viên bán hàng"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "type": "string",
+                        "description": "Mật khẩu"
+                    },
+                    "representative_name": {
+                        "title": "Representative Name",
+                        "type": "string",
+                        "description": "Tên người đại diện"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "description": "Email người đăng ký",
+                        "format": "email"
+                    },
+                    "postal_code": {
+                        "title": "Postal Code",
+                        "type": "string",
+                        "description": "Mã bưu điện"
+                    },
+                    "address": {
+                        "title": "Address",
+                        "type": "string",
+                        "description": "Địa chỉ"
+                    },
+                    "phone_number": {
+                        "title": "Phone Number",
+                        "type": "string",
+                        "description": "Số điện thoại"
+                    },
+                    "fax_number": {
+                        "title": "Fax Number",
+                        "type": "string",
+                        "description": "Số Fax"
+                    },
+                    "ID_use": {
+                        "title": "Id Use",
+                        "type": "string",
+                        "description": "ID sử dụng"
+                    },
+                    "type_base": {
+                        "title": "Type Base",
+                        "type": "string",
+                        "description": "Loại cơ sở",
+                        "default": ""
+                    },
+                    "lst_buy": {
+                        "title": "Lst Buy",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách sản phẩm muốn mua",
+                        "default": []
+                    },
+                    "price": {
+                        "title": "Price",
+                        "type": "number",
+                        "description": "Giá tiền",
+                        "default": 0
+                    },
+                    "annual_usage_fee": {
+                        "title": "Annual Usage Fee",
+                        "type": "number",
+                        "description": "Phí sử dụng hàng năm",
+                        "default": 0
+                    },
+                    "instant_delivery_request_fee": {
+                        "title": "Instant Delivery Request Fee",
+                        "type": "number",
+                        "description": "Phí yêu cầu giao hàng ngay lập tức",
+                        "default": 0
+                    },
+                    "permission": {
+                        "title": "Permission",
+                        "type": "string",
+                        "description": "Quyền của account mặc định truyền lên thì sẽ là quyền User",
+                        "default": "user"
+                    }
+                }
+            },
+            "BodyUpdateNotificationEmail": {
+                "title": "BodyUpdateNotificationEmail",
+                "required": [
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "BodyUpdateNotificationWeb": {
+                "title": "BodyUpdateNotificationWeb",
+                "required": [
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "BodyUpsert": {
+                "title": "BodyUpsert",
+                "required": [
+                    "description"
+                ],
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "title": "Description",
+                        "type": "string",
+                        "description": "Nội dung"
+                    }
+                }
+            },
+            "Body_override_image_api_v1_0_override_image_post": {
+                "title": "Body_override_image_api_v1_0_override_image_post",
+                "required": [
+                    "file",
+                    "image_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "title": "File",
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "image_id": {
+                        "title": "Image Id",
+                        "type": "string",
+                        "description": "ID image cần ghi đè"
+                    },
+                    "note": {
+                        "title": "Note",
+                        "type": "string",
+                        "description": "Ghi chú khi ghi đè"
+                    }
+                }
+            },
+            "Body_upload_file_api_v1_0_upload_file_post": {
+                "title": "Body_upload_file_api_v1_0_upload_file_post",
+                "required": [
+                    "file",
+                    "folder"
+                ],
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "title": "File",
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "folder": {
+                        "title": "Folder",
+                        "type": "string",
+                        "description": "Folder"
+                    }
+                }
+            },
+            "Body_upload_file_tutorial_api_v1_0_file_tutorial_post": {
+                "title": "Body_upload_file_tutorial_api_v1_0_file_tutorial_post",
+                "required": [
+                    "file"
+                ],
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "title": "File",
+                        "type": "string",
+                        "format": "binary"
+                    }
+                }
+            },
+            "Body_upload_image_api_v1_0_upload_image_post": {
+                "title": "Body_upload_image_api_v1_0_upload_image_post",
+                "required": [
+                    "file",
+                    "root_category_id",
+                    "category_id",
+                    "coordinates"
+                ],
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "title": "File",
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "root_category_id": {
+                        "title": "Root Category Id",
+                        "type": "string",
+                        "description": "ID category root"
+                    },
+                    "category_id": {
+                        "title": "Category Id",
+                        "type": "string",
+                        "description": "ID category upload"
+                    },
+                    "coordinates": {
+                        "title": "Coordinates",
+                        "type": "array",
+                        "items": {},
+                        "description": "Toạ độ khi up ảnh"
+                    }
+                }
+            },
+            "Body_upload_invoice_api_v1_0_upload_invoices_post": {
+                "title": "Body_upload_invoice_api_v1_0_upload_invoices_post",
+                "required": [
+                    "file"
+                ],
+                "type": "object",
+                "properties": {
+                    "file": {
+                        "title": "File",
+                        "type": "string",
+                        "format": "binary"
+                    }
+                }
+            },
+            "ChildFilterImage": {
+                "title": "ChildFilterImage",
+                "type": "object",
+                "properties": {
+                    "child_id": {
+                        "title": "Child Id",
+                        "type": "string",
+                        "description": "Child id"
+                    },
+                    "type_query": {
+                        "title": "Type Query",
+                        "type": "string",
+                        "description": "Loại query"
+                    },
+                    "account_ids": {
+                        "title": "Account Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sach account duoc filter",
+                        "default": []
+                    },
+                    "start_time": {
+                        "title": "Start Time",
+                        "type": "string",
+                        "description": "Thoi gian bat dau tim kiem. Vi du: 2022/04/06",
+                        "default": ""
+                    },
+                    "end_time": {
+                        "title": "End Time",
+                        "type": "string",
+                        "description": "Thoi gian ket thuc tim kiem. Vi du: 2022/04/06",
+                        "default": ""
+                    },
+                    "is_express_delivery": {
+                        "title": "Is Express Delivery",
+                        "type": "boolean",
+                        "description": "Giao hoả tốc hay không? Mặc định là không",
+                        "default": false
+                    }
+                }
+            },
+            "DeleteFileBody": {
+                "title": "DeleteFileBody",
+                "required": [
+                    "image_ids"
+                ],
+                "type": "object",
+                "properties": {
+                    "image_ids": {
+                        "title": "Image Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách ID hình ảnh cần xoá"
+                    }
+                }
+            },
+            "DeleteFileTutorialBody": {
+                "title": "DeleteFileTutorialBody",
+                "required": [
+                    "file_ids"
+                ],
+                "type": "object",
+                "properties": {
+                    "file_ids": {
+                        "title": "File Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách ID file tutorial cần xoá"
+                    }
+                }
+            },
+            "DownloadImageBody": {
+                "title": "DownloadImageBody",
+                "required": [
+                    "ratio",
+                    "image_ids"
+                ],
+                "type": "object",
+                "properties": {
+                    "ratio": {
+                        "title": "Ratio",
+                        "type": "string",
+                        "description": "Tỷ lệ ảnh muốn download"
+                    },
+                    "image_ids": {
+                        "title": "Image Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách ID hình ảnh muốn download"
+                    }
+                }
+            },
+            "DownloadInvoice": {
+                "title": "DownloadInvoice",
+                "type": "object",
+                "properties": {
+                    "invoice_ids": {
+                        "title": "Invoice Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách invoice_id cần tải"
+                    }
+                }
+            },
+            "FilterCategory": {
+                "title": "FilterCategory",
+                "required": [
+                    "number_next_step"
+                ],
+                "type": "object",
+                "properties": {
+                    "number_next_step": {
+                        "title": "Number Next Step",
+                        "type": "integer",
+                        "description": "Bước hiện tại"
+                    },
+                    "root_category_id": {
+                        "title": "Root Category Id",
+                        "type": "string",
+                        "description": "Định danh của thằng gốc"
+                    },
+                    "code_root_category": {
+                        "title": "Code Root Category",
+                        "type": "string",
+                        "description": "Mã của của thằng gốc"
+                    },
+                    "parent_id": {
+                        "title": "Parent Id",
+                        "type": "string",
+                        "description": "Id của thằng cha"
+                    },
+                    "search": {
+                        "title": "Search",
+                        "type": "string",
+                        "description": "Từ khoá tìm kiếm"
+                    }
+                }
+            },
+            "FilterFileBody": {
+                "title": "FilterFileBody",
+                "required": [
+                    "category_ids",
+                    "root_category_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "category_ids": {
+                        "title": "Category Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách ID danh mục cần lấy hình ảnh"
+                    },
+                    "root_category_id": {
+                        "title": "Root Category Id",
+                        "type": "string",
+                        "description": "Root category ID"
+                    }
+                }
+            },
+            "FilterHistoryImage": {
+                "title": "FilterHistoryImage",
+                "type": "object",
+                "properties": {
+                    "account_ids": {
+                        "title": "Account Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sach account duoc filter",
+                        "default": []
+                    },
+                    "start_time": {
+                        "title": "Start Time",
+                        "type": "string",
+                        "description": "Thoi gian bat dau tim kiem. Vi du: 2022/04/06",
+                        "default": ""
+                    },
+                    "end_time": {
+                        "title": "End Time",
+                        "type": "string",
+                        "description": "Thoi gian ket thuc tim kiem. Vi du: 2022/04/06",
+                        "default": ""
+                    }
+                }
+            },
+            "HTTPValidationError": {
+                "title": "HTTPValidationError",
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "title": "Detail",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        }
+                    }
+                }
+            },
+            "ImageRequestEditBody": {
+                "title": "ImageRequestEditBody",
+                "required": [
+                    "image_ids",
+                    "note"
+                ],
+                "type": "object",
+                "properties": {
+                    "image_ids": {
+                        "title": "Image Ids",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách ID hình ảnh yêu cầu chỉnh sửa"
+                    },
+                    "note": {
+                        "title": "Note",
+                        "type": "string",
+                        "description": "Ghi chú yêu cầu chỉnh sửa"
+                    },
+                    "express_delivery": {
+                        "title": "Express Delivery",
+                        "type": "boolean",
+                        "description": "Giao hoả tốc hay không?",
+                        "default": false
+                    }
+                }
+            },
+            "ResetPassword": {
+                "title": "ResetPassword",
+                "required": [
+                    "email",
+                    "request_code",
+                    "code",
+                    "new_password"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "description": "Email",
+                        "format": "email"
+                    },
+                    "request_code": {
+                        "title": "Request Code",
+                        "type": "string",
+                        "description": "Mã request từ hệ thống"
+                    },
+                    "code": {
+                        "title": "Code",
+                        "type": "string",
+                        "description": "Mã bảo vệ"
+                    },
+                    "new_password": {
+                        "title": "New Password",
+                        "type": "string",
+                        "description": "Mật khẩu mới"
+                    }
+                }
+            },
+            "SendEmailResetPassword": {
+                "title": "SendEmailResetPassword",
+                "required": [
+                    "email"
+                ],
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "format": "email"
+                    }
+                }
+            },
+            "UpdateAccount": {
+                "title": "UpdateAccount",
+                "type": "object",
+                "properties": {
+                    "facility_name": {
+                        "title": "Facility Name",
+                        "type": "string",
+                        "description": "Tên cơ sở"
+                    },
+                    "facility_code": {
+                        "title": "Facility Code",
+                        "type": "string",
+                        "description": "Mã cơ sở"
+                    },
+                    "sales_staff": {
+                        "title": "Sales Staff",
+                        "type": "string",
+                        "description": "Nhân viên bán hàng"
+                    },
+                    "password": {
+                        "title": "Password",
+                        "type": "string",
+                        "description": "Mật khẩu"
+                    },
+                    "representative_name": {
+                        "title": "Representative Name",
+                        "type": "string",
+                        "description": "Tên người đại diện"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "type": "string",
+                        "description": "Email người đăng ký",
+                        "format": "email"
+                    },
+                    "postal_code": {
+                        "title": "Postal Code",
+                        "type": "string",
+                        "description": "Mã bưu điện"
+                    },
+                    "address": {
+                        "title": "Address",
+                        "type": "string",
+                        "description": "Địa chỉ"
+                    },
+                    "phone_number": {
+                        "title": "Phone Number",
+                        "type": "string",
+                        "description": "Số điện thoại"
+                    },
+                    "fax_number": {
+                        "title": "Fax Number",
+                        "type": "string",
+                        "description": "Số Fax"
+                    },
+                    "ID_use": {
+                        "title": "Id Use",
+                        "type": "string",
+                        "description": "ID sử dụng"
+                    },
+                    "type_base": {
+                        "title": "Type Base",
+                        "type": "string",
+                        "description": "Loại cơ sở",
+                        "default": ""
+                    },
+                    "lst_buy": {
+                        "title": "Lst Buy",
+                        "type": "array",
+                        "items": {},
+                        "description": "Danh sách sản phẩm muốn mua",
+                        "default": []
+                    },
+                    "price": {
+                        "title": "Price",
+                        "type": "number",
+                        "description": "Giá tiền"
+                    },
+                    "annual_usage_fee": {
+                        "title": "Annual Usage Fee",
+                        "type": "number",
+                        "description": "Phí sử dụng hàng năm"
+                    },
+                    "instant_delivery_request_fee": {
+                        "title": "Instant Delivery Request Fee",
+                        "type": "number",
+                        "description": "Phí yêu cầu giao hàng ngay lập tức"
+                    },
+                    "permission": {
+                        "title": "Permission",
+                        "type": "string",
+                        "description": "Quyền của account mặc định truyền lên thì sẽ là quyền User",
+                        "default": "user"
+                    }
+                }
+            },
+            "UpdateCategory": {
+                "title": "UpdateCategory",
+                "required": [
+                    "name",
+                    "coordinates",
+                    "accuracy"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string",
+                        "description": "Tên của category"
+                    },
+                    "link_video_tutorial": {
+                        "title": "Link Video Tutorial",
+                        "type": "string",
+                        "description": "Link video hướng dẫn"
+                    },
+                    "coordinates": {
+                        "title": "Coordinates",
+                        "type": "array",
+                        "items": {},
+                        "description": "Toạ độ khi tạo phòng"
+                    },
+                    "accuracy": {
+                        "title": "Accuracy",
+                        "type": "number",
+                        "description": "Độ chính xác của toạ độ"
+                    }
+                }
+            },
+            "UpdateInvoice": {
+                "title": "UpdateInvoice",
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "title": "Username",
+                        "type": "string",
+                        "description": "username"
+                    },
+                    "day_request": {
+                        "title": "Day Request",
+                        "type": "string",
+                        "description": "Day request"
+                    },
+                    "day_transfer": {
+                        "title": "Day Transfer",
+                        "type": "string",
+                        "description": "Day transfer"
+                    },
+                    "big_project": {
+                        "title": "Big Project",
+                        "type": "string",
+                        "description": "Big project"
+                    },
+                    "small_project": {
+                        "title": "Small Project",
+                        "type": "string",
+                        "description": "Small project"
+                    },
+                    "quantity": {
+                        "title": "Quantity",
+                        "type": "string",
+                        "description": "Quantity"
+                    },
+                    "account_bank": {
+                        "title": "Account Bank",
+                        "type": "string",
+                        "description": "Account Bank"
+                    },
+                    "branch": {
+                        "title": "Branch",
+                        "type": "string",
+                        "description": "Branch"
+                    },
+                    "payee": {
+                        "title": "Payee",
+                        "type": "integer",
+                        "description": "payee"
+                    }
+                }
+            },
+            "ValidationError": {
+                "title": "ValidationError",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "loc": {
+                        "title": "Location",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        }
+                    },
+                    "msg": {
+                        "title": "Message",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "Error Type",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
